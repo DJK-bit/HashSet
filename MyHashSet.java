@@ -5,14 +5,14 @@ public class MyHashSet {
 
     ListNode[] bucket;
 
-    MyHashSet(int capacity){
+    MyHashSet (int capacity) {
         bucket = new ListNode[capacity];
     }
 
     /**
     * Hash returns the needed index for the hashset.
     */
-    public int hash(int val) {
+    public int hash (int val) {
         int index = Math.abs(val) % bucket.length;
         return index;
     }
@@ -20,7 +20,7 @@ public class MyHashSet {
     /**
     * Contains returns true or false for containing a value.
     */
-    public boolean contains(int val) {
+    public boolean contains (int val) {
         int index = hash(val);
 
         ListNode current = bucket[index];
@@ -31,14 +31,13 @@ public class MyHashSet {
             }
             current = current.next;
         }
-
         return false;
     }
 
     /**
     * The method add, adds a value to the bucket.
     */
-    public void add(int val) {
+    public void add (int val) {
         int index = hash(val);
 
         ListNode current = bucket[index];
@@ -57,7 +56,7 @@ public class MyHashSet {
     /**
     * The method remove, removes a value from the bucket.
     */
-    public void remove(int val) {
+    public void remove (int val) {
         int index = hash(val);
 
         ListNode current = bucket[index];
